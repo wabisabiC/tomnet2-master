@@ -20,12 +20,12 @@ import sys
 import argparse
 import numpy as np
 import pdb # For debugging
-import charnet as cn
-import prednet as pn
-import data_handler as dh
-import model_parameters as mp
-import batch_generator as bg
-import data_manager as dm
+import model.charnet as cn
+import model.prednet as pn
+import model.data_handler as dh
+import model.model_parameters as mp
+import model.batch_generator as bg
+import model.data_manager as dm
 
 class Model(mp.ModelParameter):
   # --------------------------------------
