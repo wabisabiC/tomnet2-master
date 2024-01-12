@@ -9,9 +9,9 @@ class DataManager:
     """
 	def handle_data(data_type) 
 		if data_type == “human”:
-			Return hd.HumanDataHandler()
+			return hd.HumanDataHandler()
 
 		elif data_type == “simulation”:
-			Return sd.SimulatedDataHandler()
+			return sd.SimulatedDataHandler()
 
 
