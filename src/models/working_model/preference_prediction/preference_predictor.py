@@ -20,13 +20,13 @@ from sklearn.utils import shuffle
 
 #from tensorflow.python.tools import inspect_checkpoint as chkp
 #from tensorflow.contrib import rnn
-import main_model as mm
-import model_parameters as mp
-import data_handler as dh
-import data_manager as dm
-import charnet as cn
-import prednet as pn
-import batch_generator as bg
+import model.main_model as mm
+import model.model_parameters as mp
+import model.data_handler as dh
+import model.data_manager as dm
+import model.charnet as cn
+import model.prednet as pn
+import model.batch_generator as bg
 import pdb  # For debugging
 
 class PreferencePredictor(mp.ModelParameter):
