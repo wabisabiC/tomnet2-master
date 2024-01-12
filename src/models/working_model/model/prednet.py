@@ -29,7 +29,7 @@ we make three predictions:
 import tensorflow as tf
 # import numpy as np
 # from tensorflow.contrib import rnn
-import nn_layers as nnl
+import model.nn_layers as nnl
 # For debugging
 import pdb
 
