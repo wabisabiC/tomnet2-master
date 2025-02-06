@@ -13,6 +13,7 @@ Note:
 import os
 import sys
 import time
+import inspect
 import datetime
 import pandas as pd
 import tensorflow as tf
@@ -20,12 +21,12 @@ import sys
 import argparse
 import numpy as np
 import pdb # For debugging
-import model.charnet as cn
-import model.prednet as pn
-import model.data_handler as dh
-import model.model_parameters as mp
-import model.batch_generator as bg
-import model.data_manager as dm
+from . import charnet as cn
+from . import prednet as pn
+from . import data_handler as dh
+from . import model_parameters as mp
+from . import batch_generator as bg
+from . import data_manager as dm
 
 class Model(mp.ModelParameter):
   # --------------------------------------
@@ -64,7 +65,8 @@ class Model(mp.ModelParameter):
   # --------------------------------------
   # Variable: Training parameters
   # --------------------------------------
-  path_mode =  os.getcwd()  # Necessary when the output dir and script dir is different
+  current_file_path = inspect.getfile(inspect.currentframe())
+  path_mode =  os.path.dirname(current_file_path) # Necessary when the output dir and script dir is different
   # for simulation data
   # ckpt_fname = 'test_on_simulation_data/training_result/caches/cache_dS001_v99_commit_?'
   # train_fname = 'test_on_simulation_data/training_result/caches/cache_dS001_v99_commit_?'
@@ -72,9 +74,9 @@ class Model(mp.ModelParameter):
 
   # for **human/simulation data
   #use panda df to store these values
-  path_ckpt = os.path.join('test_on_simulation_data','training_result','caches')
-  path_train = os.path.join('test_on_simulation_data','training_result','caches')
-  path_txt_data = os.path.join('..','..','data','data_dynamic')
+  path_ckpt = os.path.join('..','test_on_simulation_data','training_result','caches')
+  path_train = os.path.join('..','test_on_simulation_data','training_result','caches')
+  path_txt_data = os.path.join('..','..','..','data','data_dynamic')
 
   path_ckpt = os.path.join(path_mode,path_ckpt)
   path_train = os.path.join(path_mode,path_train)
